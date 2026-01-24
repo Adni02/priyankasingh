@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Govinda Prasad | Web CV</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">GP</div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Welcome</a></li>
+                <li><a href="experience.html" class="nav-link">Experience</a></li>
+                <li><a href="achievements.html" class="nav-link">Achievements</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="education.html" class="nav-link">Education</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1>Get in Touch</h1>
+        <p class="page-intro">I'd love to hear from you. Let's connect and explore opportunities together.</p>
+
+        <div class="contact-container">
+            <!-- Contact Information -->
+            <aside class="contact-info">
+                <h2>Contact Information</h2>
+                
+                <div class="info-block">
+                    <h4>Email</h4>
+                    <a href="mailto:govinda@example.com" class="contact-link">govinda@example.com</a>
+                </div>
+
+                <div class="info-block">
+                    <h4>Phone</h4>
+                    <a href="tel:+15551234567" class="contact-link">+1 (555) 123-4567</a>
+                </div>
+
+                <div class="info-block">
+                    <h4>Location</h4>
+                    <p>San Francisco, California, USA</p>
+                </div>
+
+                <div class="info-block">
+                    <h4>Social & Professional Links</h4>
+                    <ul class="social-links-list">
+                        <li>
+                            <a href="https://linkedin.com/in/govindaprasad" target="_blank" rel="noopener noreferrer" class="contact-link">
+                                LinkedIn Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/govindaprasad" target="_blank" rel="noopener noreferrer" class="contact-link">
+                                GitHub Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://scholar.google.com/citations?user=govindaprasad" target="_blank" rel="noopener noreferrer" class="contact-link">
+                                Google Scholar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/govindaprasad" target="_blank" rel="noopener noreferrer" class="contact-link">
+                                Twitter / X
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="info-block">
+                    <h4>Response Time</h4>
+                    <p>I typically respond to emails within 24-48 hours.</p>
+                </div>
+            </aside>
+
+            <!-- Contact Form -->
+            <section class="contact-form-section">
+                <h2>Send Me a Message</h2>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="John Doe"
+                            required
+                            aria-label="Your full name"
+                        >
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="john@example.com"
+                            required
+                            aria-label="Your email address"
+                        >
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="subject" 
+                            placeholder="What is this about?"
+                            required
+                            aria-label="Message subject"
+                        >
+                        <span class="error-message" id="subjectError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="8"
+                            placeholder="Your message here... (Please include any relevant details)"
+                            required
+                            aria-label="Your message"
+                        ></textarea>
+                        <span class="error-message" id="messageError"></span>
+                    </div>
+
+                    <div class="form-group checkbox">
+                        <input 
+                            type="checkbox" 
+                            id="contact-consent" 
+                            name="contact-consent"
+                            aria-label="Agree to be contacted"
+                        >
+                        <label for="contact-consent">You can contact me via email to follow up on this inquiry.</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <span class="form-message" id="formMessage"></span>
+                </form>
+            </section>
+        </div>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <details class="faq-item">
+                    <summary>Are you available for freelance projects?</summary>
+                    <p>
+                        I'm currently focused on full-time work but open to interesting part-time consulting 
+                        opportunities. Feel free to reach out with details about your project.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What is your typical response time?</summary>
+                    <p>
+                        I aim to respond to all inquiries within 24-48 hours during business days. 
+                        For urgent matters, please mention it in your email subject.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Do you provide consulting services?</summary>
+                    <p>
+                        Yes, I offer consulting services for technical strategy, architecture design, 
+                        and team mentoring. Please contact me to discuss your specific needs.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can I use your website as a template?</summary>
+                    <p>
+                        This website is open source and available on GitHub. Feel free to fork, 
+                        modify, and use it as a template for your own portfolio.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How can I stay updated with your latest work?</summary>
+                    <p>
+                        Follow me on LinkedIn for professional updates, GitHub for technical projects, 
+                        and my blog for technical articles and insights.
+                    </p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Govinda Prasad. All rights reserved.</p>
+            <p>Crafted with ❤️ using HTML, CSS, and Vanilla JavaScript.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
