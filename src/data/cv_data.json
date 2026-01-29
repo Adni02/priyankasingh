@@ -1,0 +1,532 @@
+{
+  "personalInfo": {
+    "name": "Priyanka Singh, PhD",
+    "title": "Senior Researcher (Independent Research Group)",
+    "department": "Department of Health Technology",
+    "section": "Experimental & Translational Immunology Section",
+    "institution": "DTU Health, Technical University of Denmark",
+    "location": "Lyngby, Denmark",
+    "orcid": "https://orcid.org/0000-0001-7654-5339",
+    "linkedin": "linkedin.com/in/priya4"
+  },
+  "researchVision": "My research focuses on nanomedicine and sustainable materials for the treatment of cancer and infectious diseases. I lead an independent research team for developing therapeutic and diagnostic nanomaterials, evaluated in 2D systems, advanced 3D spheroid and organoid models, and in vivo platforms, with a strong emphasis on clinical relevance and translational potential.",
+  "education": [
+    {
+      "degree": "PhD in Biomedical Science",
+      "institution": "Kyung Hee University, South Korea",
+      "year": "2016"
+    },
+    {
+      "degree": "Master's in Microbiology",
+      "institution": "CSJMU, India",
+      "year": "2010"
+    },
+    {
+      "degree": "Bachelor's in Microbiology",
+      "institution": "Kachchh University, India",
+      "year": "2008"
+    }
+  ],
+  "careerHighlights": "Currently, I am a Senior Researcher and Group Leader at DTU Health and a Visiting Senior Researcher at BRIGHT, where my work focuses on translational immuno-nanotechnology and infection-driven disease models. Previously, at DTU Biosustain, I progressed from Postdoctoral Fellow to Senior Researcher and Co-PI, establishing an independent research profile in cancer & infection nanomedicine. I have secured and contributed to competitive funding from the Novo Nordisk Foundation, EU Marie Skłodowska-Curie ITN, DFF, NordForsk, Lundbeckfonden, and led nanomaterials-focused work packages in multidisciplinary consortia. My work includes 95 peer-reviewed publications with >10,412 citations, supervision of PhD, postdoctoral, and master's researchers, and academic leadership as Regional Coordinator for IEEE Women in Nanotechnology.",
+  "experience": [
+    {
+      "title": "Senior Researcher & Group Leader",
+      "institution": "DTU Health Tech, Technical University of Denmark, DK",
+      "period": "March 2026-Present",
+      "responsibilities": [
+        "Providing scientific leadership and supervising postdocs on nanoparticle-based immune cell 'backpack' therapeutic platforms for cancer and chronic diseases under NNF project grant.",
+        "Supervising postdoctoral research on gold nanoparticle-based biosensors for cancer detection under DFF project grant.",
+        "Supervising visiting PhDs, Masters and postdocs under different programs at DTU Health."
+      ]
+    },
+    {
+      "title": "Visiting Senior Researcher & CO-PI",
+      "institution": "Bio Research Institute for the Green Transition (BRIGHT), Technical University of Denmark, DK",
+      "period": "March 2026-Present",
+      "responsibilities": [
+        "Co-supervising a PhDs under the EU PEST-BIN project on nanomaterial-enabled biofilm disruption.",
+        "Co-supervising visiting PhD researchers on nanomaterials projects at BRIGHT."
+      ]
+    },
+    {
+      "title": "Senior Researcher & CO-PI",
+      "institution": "BRIGHT, Technical University of Denmark, DK",
+      "period": "Jan & Feb 2026",
+      "responsibilities": [
+        "Recipient of the Novo Nordisk Foundation Career Transition Grant, supporting the establishment of an independent line of research at DTU Health.",
+        "Led MOF-based metallic nanoparticle projects targeting biofilm disruption and antimicrobial resistance."
+      ]
+    },
+    {
+      "title": "Senior Researcher & CO-PI",
+      "institution": "The Novo Nordisk Foundation Center for Biosustainability, Technical University of Denmark, DK",
+      "period": "2023-2025",
+      "responsibilities": [
+        "Lead independent research on nanomaterial based therapeutic and diagnostic platforms.",
+        "Provide scientific leadership in EU funded collaborative projects.",
+        "Supervised PhD, postdoctoral, and master's researchers."
+      ]
+    },
+    {
+      "title": "Researcher & CO-PI",
+      "institution": "The Novo Nordisk Foundation Center for Biosustainability, Technical University of Denmark, DK",
+      "period": "2021-2023",
+      "responsibilities": [
+        "Led a projects focused on green nanomaterials development for cancer and chronic diseases.",
+        "Utilized 2D and 3D cancer models to evaluate nanotherapeutic efficacy.",
+        "Supervised PhD students and postdocs under the NordForsk and Marie Curie-ITN grants."
+      ]
+    },
+    {
+      "title": "Post-doctoral Fellow",
+      "institution": "The Novo Nordisk Foundation Center for Biosustainability, Technical University of Denmark, DK",
+      "period": "2016-2020",
+      "responsibilities": [
+        "Established a nanoparticle laboratory in collaboration with DTU and international partners.",
+        "Introduced green nanoparticles at DTU Biosustain for the first time, with a focus on sustainability and environmental impact.",
+        "Achieved long-term nanoparticle stability with superior efficacy against AMR."
+      ]
+    },
+    {
+      "title": "Post-doctoral Fellow",
+      "institution": "Kyung Hee University | Suwon, South Korea",
+      "period": "April 2016-July 2016",
+      "responsibilities": [
+        "Led the project 'Designing nanoparticles, nanoconjugates, and nanocarriers for ginsenosides delivery,' improving solubility by 100%. Enhanced stability and delivery of ginsenosides, increasing pharmacological efficiency.",
+        "Supervised 6 PhD and 4 master's students, resulting in great theses and multiple high-impact publications."
+      ]
+    },
+    {
+      "title": "Microbiologist",
+      "institution": "Central Salt and Marine Chemicals Research Institute | CSIR | India",
+      "period": "2010-2012",
+      "responsibilities": [
+        "Project: Fermentative production of ε-polylysine by utilizing the byproduct of biodiesel, extensive characterization, and antimicrobial application."
+      ]
+    }
+  ],
+  "grants": {
+    "mainApplicant": [
+      {
+        "name": "ERC Starting Grant, DFF Sapere Aude, NNF Hallas-Møller",
+        "status": "applied / under review"
+      },
+      {
+        "name": "Novo Nordisk Foundation Career Transition Grant",
+        "amount": "~540 k€",
+        "country": "DK",
+        "period": "2026-2028"
+      },
+      {
+        "name": "Independent research Fund (DFF), Research Project 1",
+        "amount": "430 k€",
+        "country": "DK",
+        "period": "2025-2028"
+      },
+      {
+        "name": "Lundbeckfonden Post Doc Fellowship",
+        "amount": "322 K€",
+        "country": "DK",
+        "period": "2019-2023"
+      },
+      {
+        "name": "Lundbeckfonden travel grant",
+        "amount": "DKK 25,000",
+        "country": "DK",
+        "date": "July 2018"
+      },
+      {
+        "name": "Otto Mønsteds travel grant",
+        "amount": "DKK 7500",
+        "country": "DK",
+        "date": "July 2018"
+      },
+      {
+        "name": "Marie Curie Fellowship, H.C. Ørsted Postdoc-Cofund",
+        "amount": "147K€",
+        "period": "2016-2018"
+      }
+    ],
+    "coApplicant": [
+      {
+        "name": "EU Marie Curie ITN Grant",
+        "amount": "4.15 M€",
+        "country": "DK",
+        "period": "2025-2028"
+      },
+      {
+        "name": "NordForsk Grant",
+        "amount": "1.45 M€",
+        "country": "DK",
+        "period": "2021-2023"
+      },
+      {
+        "name": "EU Marie Curie-ITN Grant",
+        "amount": "4.15 M€",
+        "country": "DK",
+        "period": "2021-2024"
+      }
+    ]
+  },
+  "awards": [
+    {
+      "title": "Women Researcher Award-Pharmacology",
+      "conferredBy": "Academic Excellence",
+      "year": "2025"
+    },
+    {
+      "title": "Most cited paper award-Nanobiotechnology Awards",
+      "conferredBy": "ScienceFather",
+      "year": "2024"
+    },
+    {
+      "title": "Ranked in the Top 2% of scientists in the world",
+      "conferredBy": "Stanford University, USA",
+      "years": "2020-22",
+      "duration": "3 years"
+    },
+    {
+      "title": "Award for scientific publication, 750 €",
+      "conferredBy": "KHU, South Korea",
+      "occurrence": "Twice",
+      "date": "Feb & Aug 2015"
+    },
+    {
+      "title": "Indian Air Force Higher Education Award: Recognized for academic excellence",
+      "conferredBy": "India",
+      "year": "Jan 2014"
+    },
+    {
+      "title": "President scholarship for pursuing PhD",
+      "conferredBy": "South Korea",
+      "year": "Sep 2013"
+    },
+    {
+      "title": "Highest Academic Achievement Award in Master's Program",
+      "conferredBy": "India",
+      "year": "June 2010"
+    }
+  ],
+  "leadership": [
+    {
+      "role": "Regional coordinator",
+      "organization": "IEEE Nanotechnology Council-Women in Nanotechnology",
+      "period": "2025-Present"
+    },
+    {
+      "role": "Editor / Guest Editor",
+      "organization": "Elsevier, Springer, MDPI, Frontiers",
+      "period": "2017-Present"
+    },
+    {
+      "role": "Reviewer for 20+ peer-reviewed journals",
+      "organization": "including Adv. Healthcare Materials, Biomaterial Advances, etc.",
+      "period": "2013-Present"
+    },
+    {
+      "role": "Social media educator (LinkedIn)",
+      "organization": "Mentor on scholarships and study-abroad paths",
+      "period": "2015-Present"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Certified PhD Supervisor",
+      "institution": "Technical University of Denmark",
+      "year": "2025"
+    },
+    {
+      "name": "The Wider Context of Nanotechnology",
+      "institution": "Oxford University, UK",
+      "year": "2025"
+    },
+    {
+      "name": "Lean Six Sigma Green & Yellow Belt",
+      "institution": "The Knowledge Academy, UK",
+      "year": "2022"
+    },
+    {
+      "name": "Teaching & Learning Certification",
+      "institution": "Technical University of Denmark, DK",
+      "year": "2022"
+    },
+    {
+      "name": "Microsoft Project Masterclass",
+      "institution": "The Knowledge Academy, UK",
+      "year": "2022"
+    },
+    {
+      "name": "Physiological characterization, solubilization, & solid form screening for drug",
+      "institution": "UW-Madison, USA",
+      "year": "2022"
+    },
+    {
+      "name": "HMX Pro: Pharmacology & Drug Delivery",
+      "institution": "Harvard Medical School, USA",
+      "year": "2021"
+    },
+    {
+      "name": "Biologics: Big Molecules Big Challenges",
+      "institution": "UW-Madison, USA",
+      "year": "2021"
+    },
+    {
+      "name": "Overview of the-Drug Development Process, various aspects of CMC",
+      "institution": "UW-Madison, USA",
+      "year": "2022"
+    },
+    {
+      "name": "Practical strategies for-Developing preclinical & phase 1 oral drug formulations",
+      "institution": "UW-Madison, USA",
+      "year": "2021"
+    },
+    {
+      "name": "Transformational Leadership Program (Leading Women)",
+      "institution": "Copenhagen Business School, DK",
+      "year": "2020"
+    }
+  ],
+  "talks": [
+    {
+      "title": "Keynote Speaker - Virtual International Conference on Advances in Nanotechnology and Biotechnology (VICANB 2026)",
+      "date": "Feb 3-4, 2026",
+      "status": "Scheduled"
+    },
+    {
+      "title": "Consortium Meeting Chair - EU Marie Curie ITN Grant, BUG-ID-MSCA-2024-DN-01",
+      "description": "leading consortium meetings and discussions",
+      "period": "2025-2028"
+    },
+    {
+      "title": "Invited Speaker - IEEE Nanotechnology Materials and Devices Conference, IEEE-NMDC",
+      "date": "Oct 2025"
+    },
+    {
+      "title": "Invited Speaker - International Microbiology Day, ITM Vocational University",
+      "date": "Sep 17, 2025"
+    }
+  ],
+  "scientificExcellence": [
+    {
+      "area": "Nanomedicine & biomaterials",
+      "description": "Sustainable nanomaterial for cancer therapy and antimicrobial applications."
+    },
+    {
+      "area": "Drug delivery system",
+      "description": "Nanoparticle based delivery platforms with controlled release and therapeutic validation."
+    },
+    {
+      "area": "Cancer nanomedicine expertise",
+      "description": "Experiments and techniques related with mechanism-driven evaluation of nanomedicines in 2D, 3D spheroid and organoid models, and in vivo studies."
+    },
+    {
+      "area": "Microbiology & antimicrobial Expertise",
+      "description": "Handling of pathogenic bacteria under biosafety conditions; antimicrobial susceptibility testing; biofilm formation and inhibition assays; time-kill kinetics, membrane integrity, and ROS assays; development of bacterial-nanomaterial interaction studies; screening for antimicrobial resistance mechanisms. BSL-2 laboratory & cancer research facility training – DTU Biosustain, Denmark; Kyung Hee University, South Korea"
+    },
+    {
+      "area": "Biosensor development for cancer diagnosis",
+      "description": "Design of biosensors for early lung cancer detection, including assay development, nanomaterial functionalization, and translational validation."
+    },
+    {
+      "area": "Instrumentation expertise",
+      "description": "Nanomaterial characterization using electron microscopy (TEM, SEM), spectroscopy, particle size analysis, rheology, and flow cytometry, with bioanalytical support from HPLC, ICPMS, Mass spec, LCMS and microplate-based assays."
+    },
+    {
+      "area": "Research leadership & impact",
+      "description": "Independent group leadership, PhD supervision, and international collaboration, with leadership roles in EU Marie Curie ITN, NordForsk, and Lundbeckfonden funded projects."
+    }
+  ],
+  "collaborativeResearch": [
+    "As a Senior Researcher at DTU Biosustain, I have led and contributed to collaborative initiatives under NordForsk and EU Marie Curie ITN projects, building a strong international research network. I have collaborated with leading scientists and clinical partners worldwide, including Ali Khademhosseini (TIBI, USA), Ivan Mijakovic (Chalmers University of Technology, Sweden), Hina Singh (University of California, Riverside, USA), Ameya Kirtane (University of Minnesota, USA), Kristoffer Staal Rohrberg (Region Hovedstaden, Denmark), Yogendra Kumar Mishra (SDU, Denmark), and Verónica CastroAceituno (City of Hope, USA), as well as with institutions such as the University of Copenhagen, Sejong University (South Korea), and Zhengzhou University (China), among others across Europe, Asia, and the USA.",
+    "During my postdoctoral research in Denmark, I established strategic collaborations with industry partners including SINTEF (Norway), Dyson (UK), DFM, and Novonesis (Denmark). These collaborations led to ongoing research activities that form a foundation for my current translational nanomaterials research.",
+    "Led collaborative research in an international laboratory at Kyung Hee University, South Korea, resulting in over 34 joint publications with PhD and master's students from diverse backgrounds."
+  ],
+  "supervision": {
+    "postdocs": [
+      {
+        "position": "Postdoc 1",
+        "institution": "DTU Health",
+        "period": "2026-2029",
+        "grant": "Independent Research Fund Denmark, Research Project 1",
+        "project": "Portable AI-integrated green gold nanoparticle biosensor for ultra-early, non-invasive lung cancer detection",
+        "status": "approved; hiring"
+      },
+      {
+        "position": "Postdoc 2",
+        "institution": "DTU Health",
+        "period": "2026-2029",
+        "grant": "Novo Nordisk Foundation Career Transition Grant",
+        "project": "Cargo-free swarm backpack nanotechnology to modulate the cancer-immune interface",
+        "status": "approved; hiring"
+      },
+      {
+        "name": "Dr. Abhayraj Joshi",
+        "institution": "DTU Biosustain",
+        "period": "2019-2023",
+        "grant": "NordForsk Grant",
+        "project": "Translational anticancer mechanisms of green-silver nanoparticles in 3D and in vivo models"
+      }
+    ],
+    "phds": [
+      {
+        "position": "PhD 1",
+        "institution": "DTU BRIGHT",
+        "grant": "EU Marie Skłodowska-Curie Doctoral Network (BUG-ID-MSCA-2024-DN-01)",
+        "project": "Infection biomarker discovery in chronic wound models.",
+        "status": "hiring active"
+      },
+      {
+        "position": "PhD 2",
+        "institution": "DTU BRIGHT",
+        "grant": "EU Marie Skłodowska-Curie Doctoral Network (BUG-ID-MSCA-2024-DN-01)",
+        "project": "Optimizing bioreceptor–graphene interactions for infection diagnostics.",
+        "status": "hiring active"
+      },
+      {
+        "name": "Mukil Madhusudanan",
+        "institution": "DTU Biosustain",
+        "period": "2021-2024",
+        "grant": "EU Marie Skłodowska-Curie ITN Grant (H2020-MSCA-ITN-2020)",
+        "thesis": "Green synthesis of silver nanoparticles and their polymer composites for enhanced antimicrobial and anticancer applications."
+      }
+    ],
+    "visitingPhds": [
+      {
+        "name": "Kristian Nakić",
+        "from": "University of Split, Croatia",
+        "institution": "DTU BRIGHT",
+        "period": "April-June, 2026"
+      },
+      {
+        "name": "Jaume Sempere Torregrosa",
+        "from": "Universitat Politècnica de València, Spain",
+        "institution": "DTU Biosustain",
+        "period": "Sep-Dec 2025",
+        "project": "Sustainable antimicrobial chitosan-silver nanocomposite films for infection-resistant surfaces."
+      }
+    ],
+    "masters": [
+      {
+        "name": "Linnea Marika Damgaard Arum",
+        "institution": "DTU Biosustain & BRIGHT",
+        "period": "Jan 2025-Feb 2026",
+        "thesis": "Mechanistic comparison of green- and chemically-synthesized silver nanoparticles against lung cancer cells."
+      }
+    ],
+    "interns": [
+      {
+        "name": "Mugdha Bapat (MSc)",
+        "institution": "DTU Biosustain",
+        "period": "Jun 2021-Jan 2022",
+        "grant": "CFB central grant",
+        "project": "Mitochondrial depolarization–mediated anticancer effects of Viridibacillus-derived silver nanoparticles in lung cancer models"
+      }
+    ]
+  },
+  "bibliometrics": {
+    "totalPublications": 95,
+    "highestImpactFactor": 41.4,
+    "highestCitedPaper": "~2109 citations (since 2016)",
+    "lastAuthorship": 9,
+    "firstAuthorship": 36,
+    "correspondingAuthorship": 27,
+    "totalCitations": 10412,
+    "hIndex": 47,
+    "i10Index": 68
+  },
+  "selectedPublications": [
+    {
+      "authors": "Balusamy SR, Justine E, Singh P, Kim YJ*, Lee S, Ranjan A, Sohn D, Mijavoic I, Rahimi S*, Perumalsamy H*",
+      "title": "Single cell RNA sequencing reveals functional heterogeneity of neutrophils and macrophage subsets acting as a biomarker for chronic wounds in diabetic patients",
+      "journal": "Carbohydrate polymer",
+      "impactFactor": "12.5",
+      "status": "In press"
+    },
+    {
+      "authors": "Zhang J, Singh P, Chena X, Shi L, Cao Z, Rahimi S, Pandit S, Mijakovic I*",
+      "title": "Green silver nanoparticles as promising anticaries agents: antibacterial and transcriptomic Insights into planktonic and biofilm Streptococcus mutans",
+      "journal": "Materials Today bio",
+      "impactFactor": "10",
+      "status": "In press"
+    },
+    {
+      "authors": "Madhusudanan M, Mijakovic I, Singh P*",
+      "title": "Biogenic vs. Chemical AgNPs: A comparison of antimicrobial potency and stability",
+      "journal": "Int. J. Mol. Sci.",
+      "volume": "27(1)",
+      "pages": "62",
+      "year": "2026",
+      "impactFactor": "4.3",
+      "link": "link"
+    },
+    {
+      "authors": "Singh P*, Joshi AS, Singh H, Mijakovic I*",
+      "title": "Medical importance and pharmacokinetics of gold nanoparticles in the human body",
+      "journal": "Molecular Cancer",
+      "volume": "24",
+      "pages": "252",
+      "year": "2025",
+      "impactFactor": "41",
+      "link": "link"
+    },
+    {
+      "authors": "Singh P*, Mijakovic I*",
+      "title": "Strain-Specific Bacillus subtilis-Derived silver nanoparticles for effective antibacterial activity against multidrug-resistant pathogens: In vitro model",
+      "journal": "Int J Nanomedicine",
+      "volume": "20",
+      "pages": "13055-13078",
+      "year": "2025",
+      "impactFactor": "8",
+      "link": "link"
+    },
+    {
+      "authors": "Basak S, Singh P, Weller A, Kadumudi FB, Kempen PJ, Mijakovic I, Dolatshahi-Pirouz A, Almdal K",
+      "title": "Cost-effective and ecofriendly sprayable nanogels (ZC-CSNG) for multifunctional wound dressing applications",
+      "journal": "Chemical Engineering Journal",
+      "volume": "503",
+      "pages": "1583121",
+      "year": "2025",
+      "impactFactor": "14",
+      "link": "link"
+    },
+    {
+      "authors": "Singh P*, Pandit S, Balusamy SR, Madhusudanan M, Singh H, Haseef HMA, Mijakovic I",
+      "title": "Advanced Nanomaterials for Cancer Therapy: Gold, silver, and iron oxide nanoparticles in oncological applications",
+      "journal": "Adv. Healthcare Mater.",
+      "pages": "2403059",
+      "year": "2024",
+      "impactFactor": "10",
+      "link": "link"
+    },
+    {
+      "authors": "Prabhu PP, Mohanty B, Lobo CL, Balusamy SR, Shetty A, Perumalsamy H, Manohar Y, Dubey A, Mijakovic I, Singh P*",
+      "title": "Harnessing the nutriceutics in early-stage breast cancer: mechanisms, combinational therapy, and drug delivery",
+      "journal": "Journal of Nanobiotechnology",
+      "volume": "22",
+      "pages": "574",
+      "year": "2024",
+      "impactFactor": "12.6",
+      "link": "link"
+    },
+    {
+      "authors": "Abhayraj S. Joshi, Mugdha V. Bapat, Singh P, Mijakovic I*",
+      "title": "Viridibacillus culture-derived silver nanoparticles exert potent anticancer action in 2D and 3D models of lung cancer via mitochondrial depolarization-mediated apoptosis",
+      "journal": "Materials Today Bio",
+      "volume": "25",
+      "pages": "100997",
+      "year": "2024",
+      "impactFactor": "10.2",
+      "link": "link"
+    },
+    {
+      "authors": "Singh P, Kim YJ, Zhang D, Yang DC*",
+      "title": "Biological synthesis of nanoparticles from plants and microorganisms",
+      "journal": "Trends in Biotech",
+      "volume": "34(7)",
+      "pages": "588-599",
+      "year": "2016",
+      "impactFactor": "14.9",
+      "link": "link"
+    }
+  ]
+}
