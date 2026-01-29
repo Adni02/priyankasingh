@@ -2,9 +2,11 @@
 .DS_Store
 Thumbs.db
 
-# Node modules (if added later)
+# Node modules
 node_modules/
-package-lock.json
+
+# Build output
+dist/
 
 # IDE
 .vscode/
