@@ -135,10 +135,10 @@ export default function Publications() {
   return (
     <div>
       {/* Header */}
-      <section className="bg-gradient-to-br from-purple-50 via-white to-gray-50 py-24">
+      <section className="bg-gradient-to-br from-purple-50/40 via-white to-cyan-50/20 py-24">
         <div className="section-container">
           <h1 className="text-center mb-6">Publications</h1>
-          <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-center text-lg text-slate-600 max-w-3xl mx-auto">
             <span className="font-semibold text-primary">{publications.length}</span> peer-reviewed publications with <span className="font-semibold text-accent">{publications.reduce((sum, pub) => sum + parseInt(pub.citation || '0'), 0).toLocaleString()}+</span> citations
           </p>
         </div>
@@ -151,7 +151,7 @@ export default function Publications() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Search */}
               <div className="md:col-span-2">
-                <label htmlFor="search" className="block text-sm font-semibold text-gray-900 mb-3">
+                <label htmlFor="search" className="block text-sm font-semibold text-slate-900 mb-3">
                   Search Publications
                 </label>
                 <input
@@ -160,20 +160,20 @@ export default function Publications() {
                   placeholder="Search by title, author, or journal..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                 />
               </div>
 
               {/* Year Filter */}
               <div>
-                <label htmlFor="year" className="block text-sm font-semibold text-gray-900 mb-3">
+                <label htmlFor="year" className="block text-sm font-semibold text-slate-900 mb-3">
                   Filter by Year
                 </label>
                 <select
                   id="year"
                   value={selectedYear}
                   onChange={(e) => setSelectedYear(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                 >
                   <option value="">All Years</option>
                   {years.map(year => (
@@ -183,8 +183,8 @@ export default function Publications() {
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-gray-200 flex justify-between items-center">
-              <p className="text-sm font-medium text-gray-600">
+            <div className="mt-6 pt-4 border-t border-slate-200 flex justify-between items-center">
+              <p className="text-sm font-medium text-slate-600">
                 Showing <span className="text-primary font-semibold">{filteredPublications.length}</span> of <span className="text-primary font-semibold">{publications.length}</span> publications
               </p>
               {(searchTerm || selectedYear) && (
@@ -212,26 +212,26 @@ export default function Publications() {
                     rel="noopener noreferrer"
                     className="group-hover:text-primary transition-colors"
                   >
-                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    <h3 className="text-lg font-semibold text-slate-900 group-hover:text-primary transition-colors">
                       {pub.title}
                     </h3>
                   </a>
                   
-                  <p className="text-sm text-gray-600 font-medium">
+                  <p className="text-sm text-slate-600 font-medium">
                     {pub.author}
                   </p>
                   
-                  <div className="flex flex-wrap items-center gap-2 text-sm text-gray-700">
+                  <div className="flex flex-wrap items-center gap-2 text-sm text-slate-700">
                     <span className="italic font-medium">{pub.journal}</span>
                     {pub.journal_issue && pub.journal_issue.trim() !== '' && (
                       <>
-                        <span className="text-gray-400">•</span>
+                        <span className="text-slate-400">•</span>
                         <span>{pub.journal_issue}</span>
                       </>
                     )}
                     {pub.year && pub.year.trim() !== '' && (
                       <>
-                        <span className="text-gray-400">•</span>
+                        <span className="text-slate-400">•</span>
                         <span className="text-primary font-semibold">{pub.year}</span>
                       </>
                     )}
@@ -239,9 +239,9 @@ export default function Publications() {
                   
                   <div className="flex flex-wrap items-center gap-4 pt-2">
                     {pub.citation && pub.citation.trim() !== '' && parseInt(pub.citation) > 0 && (
-                      <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent/10 text-accent rounded-full text-sm font-medium">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                         {pub.citation} citations
                       </span>
@@ -251,14 +251,14 @@ export default function Publications() {
                       href={pub.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-all duration-300 text-sm font-medium group-hover:shadow-md"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-all duration-300 text-sm font-medium shadow-sm hover:shadow-md"
                     >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                       Read Paper
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
                   </div>
@@ -274,8 +274,8 @@ export default function Publications() {
                 onClick={handleLoadMore}
                 className="btn-primary"
               >
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
                 Load More Publications ({filteredPublications.length - displayedPublications.length} remaining)
               </button>
@@ -284,10 +284,10 @@ export default function Publications() {
 
           {filteredPublications.length === 0 && (
             <div className="text-center py-16">
-              <svg className="w-20 h-20 text-gray-300 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <svg className="w-20 h-20 text-slate-300 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <p className="text-gray-600 text-lg mb-4">No publications found matching your criteria.</p>
+              <p className="text-slate-600 text-lg mb-4">No publications found matching your criteria.</p>
               <button
                 onClick={() => {
                   setSearchTerm('')
@@ -304,18 +304,18 @@ export default function Publications() {
 
       {/* Collaboration Banner */}
       <section className="section-container">
-        <div className="max-w-4xl mx-auto card-accent bg-gradient-to-r from-purple-50 to-cyan-50 text-center py-12">
+        <div className="max-w-4xl mx-auto card-accent bg-gradient-to-r from-purple-50/40 to-cyan-50/20 text-center py-12">
           <h2 className="mb-6">Interested in Collaboration?</h2>
-          <p className="text-xl mb-8 text-gray-700 leading-relaxed">
+          <p className="text-xl mb-8 text-slate-700 leading-relaxed max-w-prose mx-auto">
             Looking to collaborate on research projects, co-author publications, or discuss potential partnerships? 
             Feel free to reach out.
           </p>
           <a 
             href="mailto:prisi@dtu.dk"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-all duration-300 shadow-md hover:shadow-lg"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
             Get in Touch
           </a>

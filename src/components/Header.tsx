@@ -40,7 +40,7 @@ export default function Header() {
         style={{ width: `${scrollProgress}%` }}
       />
       
-      <header className="sticky top-0 z-40 backdrop-blur-md bg-white/80 border-b border-gray-100/50 shadow-sm">
+      <header className="sticky top-0 z-40 backdrop-blur-md bg-white/80 border-b border-slate-100/50 shadow-sm">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo/Name */}
@@ -56,10 +56,10 @@ export default function Header() {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  className={`px-3 py-2 text-sm font-medium transition-all duration-200 ${
                     isActive(link.path)
-                      ? 'text-primary bg-purple-50 font-semibold'
-                      : 'text-gray-700 hover:text-primary hover:bg-gray-100'
+                      ? 'text-primary font-semibold nav-active'
+                      : 'text-slate-700 hover:text-primary'
                   }`}
                 >
                   {link.label}
@@ -70,29 +70,31 @@ export default function Header() {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-700 hover:text-primary hover:bg-gray-100 focus:outline-none transition-colors"
+              className="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-slate-700 hover:text-primary hover:bg-slate-100 focus:outline-none transition-colors"
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
               {!isMenuOpen ? (
                 <svg
-                  className="block h-6 w-6"
+                  className="block h-5 w-5"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
+                  strokeWidth={2}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               ) : (
                 <svg
-                  className="block h-6 w-6"
+                  className="block h-5 w-5"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
+                  strokeWidth={2}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               )}
             </button>
@@ -100,16 +102,16 @@ export default function Header() {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="lg:hidden pb-4 border-t border-gray-200">
+            <div className="lg:hidden pb-4 border-t border-slate-200">
               <div className="flex flex-col space-y-2 pt-4">
                 {navLinks.map((link) => (
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`px-4 py-2.5 rounded-lg text-base font-medium transition-all duration-200 ${
+                    className={`px-4 py-2.5 text-base font-medium transition-all duration-200 ${
                       isActive(link.path)
-                        ? 'text-primary bg-purple-50 font-semibold'
-                        : 'text-gray-700 hover:text-primary hover:bg-gray-50'
+                        ? 'text-primary font-semibold'
+                        : 'text-slate-700 hover:text-primary hover:bg-slate-50'
                     }`}
                   >
                     {link.label}

@@ -41,10 +41,10 @@ export default function Contact() {
   return (
     <div>
       {/* Header */}
-      <section className="bg-gradient-to-br from-blue-50 to-white py-16">
+      <section className="bg-gradient-to-br from-purple-50/40 via-white to-cyan-50/20 py-16">
         <div className="section-container">
           <h1 className="text-center mb-4">Contact</h1>
-          <p className="text-center text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-center text-xl text-slate-600 max-w-3xl mx-auto">
             Get in Touch
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function Contact() {
         <div className="max-w-3xl mx-auto">
           <div className="card">
             <h2 className="mb-6">Send a Message</h2>
-            <p className="text-gray-700 mb-6">
+            <p className="text-slate-700 mb-6 max-w-prose">
               Please fill out the form below. Clicking "Send Message" will open your email client
               with a pre-filled message.
             </p>
@@ -63,7 +63,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name */}
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
                   Your Name *
                 </label>
                 <input
@@ -72,14 +72,14 @@ export default function Contact() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="Enter your name"
                 />
               </div>
 
               {/* Subject */}
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-2">
                   Subject *
                 </label>
                 <input
@@ -88,14 +88,14 @@ export default function Contact() {
                   required
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="e.g., Research Collaboration, PhD Inquiry"
                 />
               </div>
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
                   Message *
                 </label>
                 <textarea
@@ -104,7 +104,7 @@ export default function Contact() {
                   rows={6}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="Enter your message"
                 />
               </div>
@@ -116,8 +116,8 @@ export default function Contact() {
                   className="btn-primary"
                 >
                   Send Message
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </button>
                 
@@ -127,9 +127,9 @@ export default function Contact() {
                   className="btn-secondary"
                 >
                   Show Email
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
                 </button>
               </div>
@@ -139,21 +139,25 @@ export default function Contact() {
       </section>
 
       {/* Contact Information */}
-      <section className="bg-gray-50 section-container">
+      <section className="section-alt section-container">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-center mb-12">Contact Information</h2>
+          <div className="section-header">
+            <h2 className="mb-4">Contact Information</h2>
+            <div className="section-header-rule"></div>
+          </div>
+          <div className="mt-10"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Office */}
             <div className="card bg-white">
               <div className="flex items-start">
                 <div className="flex-shrink-0">
-                  <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Office Address</h3>
-                  <p className="text-gray-700">
+                  <h3 className="text-lg font-semibold text-slate-900 mb-2">Office Address</h3>
+                  <p className="text-slate-700">
                     Department of Health Technology<br />
                     Experimental & Translational Immunology Section<br />
                     DTU Health<br />
@@ -168,12 +172,12 @@ export default function Contact() {
             <div className="card bg-white">
               <div className="flex items-start">
                 <div className="flex-shrink-0">
-                  <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                  <svg className="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                   </svg>
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Online Presence</h3>
+                  <h3 className="text-lg font-semibold text-slate-900 mb-3">Online Presence</h3>
                   <div className="space-y-2">
                     <a
                       href="https://orcid.org/0000-0001-7654-5339"
@@ -217,9 +221,9 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="mt-8 p-4 bg-blue-50 rounded-lg text-sm text-gray-700 text-center">
-            <svg className="w-5 h-5 inline mr-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          <div className="mt-8 p-4 bg-slate-100 rounded-lg text-sm text-slate-700 text-center">
+            <svg className="w-5 h-5 inline mr-2 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
             Privacy Note: Contact information is protected against automated scraping.
             Use the form above to reach out securely.
