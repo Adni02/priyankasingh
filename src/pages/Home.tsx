@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom'
 import cvData from '../data/cv_data.json'
+import Typewriter from '../components/Typewriter'
+import { useCountUp } from '../hooks/useCountUp'
 
 export default function Home() {
+  // Count-up animations for metrics
+  const publicationsCount = useCountUp({ end: cvData.bibliometrics.totalPublications, duration: 1200 })
+  const citationsCount = useCountUp({ end: cvData.bibliometrics.totalCitations, duration: 1200 })
+  const hIndexCount = useCountUp({ end: cvData.bibliometrics.hIndex, duration: 1000 })
+  const impactFactorCount = useCountUp({ end: cvData.bibliometrics.highestImpactFactor, duration: 1000, decimals: 1 })
 
   return (
     <div>
@@ -14,7 +21,9 @@ export default function Home() {
                 {cvData.personalInfo.name.replace(', PhD', '')}
               </h1>
               <div className="space-y-3 mb-8 text-lg">
-                <p className="text-primary font-semibold text-xl">{cvData.personalInfo.title}</p>
+                <p className="text-primary font-semibold text-xl">
+                  <Typewriter text={cvData.personalInfo.title} speed={50} />
+                </p>
                 <p className="text-slate-700">{cvData.personalInfo.department}</p>
                 <p className="text-slate-600">{cvData.personalInfo.section}</p>
                 <p className="text-slate-700 font-medium">{cvData.personalInfo.institution}</p>
@@ -67,30 +76,30 @@ export default function Home() {
         </div>
         <div className="mt-10"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-          <div className="card text-center bg-white">
+          <div className="card text-center bg-white" ref={publicationsCount.elementRef}>
             <div className="text-4xl font-bold text-primary mb-2">
-              {cvData.bibliometrics.totalPublications}
+              {Math.round(publicationsCount.count)}
             </div>
             <div className="text-slate-600">Publications</div>
             <p className="text-xs text-slate-500 mt-2">Peer-reviewed articles</p>
           </div>
-          <div className="card text-center bg-white">
+          <div className="card text-center bg-white" ref={citationsCount.elementRef}>
             <div className="text-4xl font-bold text-primary mb-2">
-              {cvData.bibliometrics.totalCitations.toLocaleString()}+
+              {Math.round(citationsCount.count).toLocaleString()}+
             </div>
             <div className="text-slate-600">Citations</div>
             <p className="text-xs text-slate-500 mt-2">Research impact</p>
           </div>
-          <div className="card text-center bg-white">
+          <div className="card text-center bg-white" ref={hIndexCount.elementRef}>
             <div className="text-4xl font-bold text-primary mb-2">
-              {cvData.bibliometrics.hIndex}
+              {Math.round(hIndexCount.count)}
             </div>
             <div className="text-slate-600">H-Index</div>
             <p className="text-xs text-slate-500 mt-2">Academic contribution</p>
           </div>
-          <div className="card text-center bg-white">
+          <div className="card text-center bg-white" ref={impactFactorCount.elementRef}>
             <div className="text-4xl font-bold text-primary mb-2">
-              {cvData.bibliometrics.highestImpactFactor}
+              {impactFactorCount.count.toFixed(1)}
             </div>
             <div className="text-slate-600">Highest IF</div>
             <p className="text-xs text-slate-500 mt-2">Top journal</p>
@@ -194,7 +203,7 @@ export default function Home() {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-all duration-300 shadow-md hover:shadow-lg"
+            className="btn-primary rounded-full px-8 py-3"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

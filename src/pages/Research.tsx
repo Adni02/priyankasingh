@@ -120,7 +120,7 @@ export default function Research() {
           </p>
           <a 
             href="mailto:priyanka.singh@dal.ca?subject=Research Collaboration Inquiry"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-all duration-300 shadow-md hover:shadow-lg"
+            className="btn-primary rounded-full px-8 py-3"
           >
             Get in Touch
           </a>
