@@ -1,4 +1,5 @@
 import cvData from '../data/cv_data.json'
+import Typewriter from '../components/Typewriter'
 
 export default function Awards() {
   return (
@@ -8,7 +9,7 @@ export default function Awards() {
         <div className="section-container">
           <h1 className="text-center mb-4">Awards & Grants</h1>
           <p className="text-center text-xl text-slate-600 max-w-3xl mx-auto">
-            Honors, Recognition, and Research Funding
+            <Typewriter text="Honors, Recognition, and Research Funding" speed={40} />
           </p>
         </div>
       </section>

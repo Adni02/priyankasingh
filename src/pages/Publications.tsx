@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react'
+import cvData from '../data/cv_data.json'
+import Typewriter from '../components/Typewriter'
+import { useCountUp } from '../hooks/useCountUp'
 
 interface Publication {
   link: string
@@ -11,6 +14,12 @@ interface Publication {
 }
 
 export default function Publications() {
+  // Count-up animations for metrics
+  const publicationsCount = useCountUp({ end: cvData.bibliometrics.totalPublications, duration: 1200 })
+  const citationsCount = useCountUp({ end: cvData.bibliometrics.totalCitations, duration: 1200 })
+  const hIndexCount = useCountUp({ end: cvData.bibliometrics.hIndex, duration: 1000 })
+  const impactFactorCount = useCountUp({ end: cvData.bibliometrics.highestImpactFactor, duration: 1000, decimals: 1 })
+
   const [publications, setPublications] = useState<Publication[]>([])
   const [filteredPublications, setFilteredPublications] = useState<Publication[]>([])
   const [displayedPublications, setDisplayedPublications] = useState<Publication[]>([])
@@ -139,8 +148,47 @@ export default function Publications() {
         <div className="section-container">
           <h1 className="text-center mb-6">Publications</h1>
           <p className="text-center text-lg text-slate-600 max-w-3xl mx-auto">
-            <span className="font-semibold text-primary">{publications.length}</span> peer-reviewed publications with <span className="font-semibold text-accent">{publications.reduce((sum, pub) => sum + parseInt(pub.citation || '0'), 0).toLocaleString()}+</span> citations
+            <Typewriter text={`${cvData.bibliometrics.totalPublications} peer-reviewed publications with ${cvData.bibliometrics.totalCitations.toLocaleString()}+ citations`} speed={30} />
           </p>
+        </div>
+      </section>
+
+      {/* Research Impact Metrics */}
+      <section className="section-alt section-container">
+        <div className="section-header">
+          <h2 className="mb-4">Research Impact</h2>
+          <div className="section-header-rule"></div>
+        </div>
+        <div className="mt-10"></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+          <div className="card text-center bg-white" ref={publicationsCount.elementRef}>
+            <div className="text-4xl font-bold text-primary mb-2">
+              {Math.round(publicationsCount.count)}
+            </div>
+            <div className="text-slate-600">Publications</div>
+            <p className="text-xs text-slate-500 mt-2">Peer-reviewed articles</p>
+          </div>
+          <div className="card text-center bg-white" ref={citationsCount.elementRef}>
+            <div className="text-4xl font-bold text-primary mb-2">
+              {Math.round(citationsCount.count).toLocaleString()}+
+            </div>
+            <div className="text-slate-600">Citations</div>
+            <p className="text-xs text-slate-500 mt-2">Research impact</p>
+          </div>
+          <div className="card text-center bg-white" ref={hIndexCount.elementRef}>
+            <div className="text-4xl font-bold text-primary mb-2">
+              {Math.round(hIndexCount.count)}
+            </div>
+            <div className="text-slate-600">H-Index</div>
+            <p className="text-xs text-slate-500 mt-2">Academic contribution</p>
+          </div>
+          <div className="card text-center bg-white" ref={impactFactorCount.elementRef}>
+            <div className="text-4xl font-bold text-primary mb-2">
+              {impactFactorCount.count.toFixed(1)}
+            </div>
+            <div className="text-slate-600">Highest IF</div>
+            <p className="text-xs text-slate-500 mt-2">Top journal</p>
+          </div>
         </div>
       </section>
 

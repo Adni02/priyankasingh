@@ -1,4 +1,5 @@
 import cvData from '../data/cv_data.json'
+import Typewriter from '../components/Typewriter'
 
 export default function About() {
   return (
@@ -8,7 +9,7 @@ export default function About() {
         <div className="section-container">
           <h1 className="text-center mb-6">About</h1>
           <p className="text-center text-lg text-slate-600 max-w-3xl mx-auto">
-            Senior Researcher & Group Leader in Nanomedicine and Biomaterials
+            <Typewriter text="Senior Researcher & Group Leader in Nanomedicine and Biomaterials" speed={40} />
           </p>
         </div>
       </section>

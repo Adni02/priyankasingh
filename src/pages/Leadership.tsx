@@ -1,4 +1,5 @@
 import cvData from '../data/cv_data.json'
+import Typewriter from '../components/Typewriter'
 
 export default function Leadership() {
   return (
@@ -8,7 +9,7 @@ export default function Leadership() {
         <div className="section-container">
           <h1 className="text-center mb-6">Leadership & Talks</h1>
           <p className="text-center text-lg text-slate-600 max-w-3xl mx-auto">
-            Contributing to the Scientific Community Through Service & Knowledge Sharing
+            <Typewriter text="Contributing to the Scientific Community Through Service & Knowledge Sharing" speed={40} />
           </p>
         </div>
       </section>

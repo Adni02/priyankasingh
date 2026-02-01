@@ -1,6 +1,17 @@
 import cvData from '../data/cv_data.json'
+import Typewriter from '../components/Typewriter'
+import { useCountUp } from '../hooks/useCountUp'
 
 export default function Research() {
+  // Count-up animations for metrics
+  const publicationsCount = useCountUp({ end: cvData.bibliometrics.totalPublications, duration: 1200 })
+  const citationsCount = useCountUp({ end: cvData.bibliometrics.totalCitations, duration: 1200 })
+  const hIndexCount = useCountUp({ end: cvData.bibliometrics.hIndex, duration: 1000 })
+  const i10IndexCount = useCountUp({ end: cvData.bibliometrics.i10Index, duration: 1000 })
+  const firstAuthorCount = useCountUp({ end: cvData.bibliometrics.firstAuthorship, duration: 1000 })
+  const correspondingAuthorCount = useCountUp({ end: cvData.bibliometrics.correspondingAuthorship, duration: 1000 })
+  const impactFactorCount = useCountUp({ end: cvData.bibliometrics.highestImpactFactor, duration: 1000, decimals: 1 })
+
   return (
     <div>
       {/* Header */}
@@ -8,7 +19,7 @@ export default function Research() {
         <div className="section-container">
           <h1 className="text-center mb-4">Research</h1>
           <p className="text-center text-xl text-slate-600 max-w-3xl mx-auto">
-            Nanomedicine and Sustainable Materials for Cancer and Infectious Diseases
+            <Typewriter text="Nanomedicine and Sustainable Materials for Cancer and Infectious Diseases" speed={40} />
           </p>
         </div>
       </section>
@@ -48,47 +59,47 @@ export default function Research() {
         </div>
         <div className="mt-10"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-          <div className="card text-center bg-white">
+          <div className="card text-center bg-white" ref={publicationsCount.elementRef}>
             <div className="text-4xl font-bold text-primary mb-2">
-              {cvData.bibliometrics.totalPublications}
+              {Math.round(publicationsCount.count)}
             </div>
             <div className="text-slate-600">Total Publications</div>
           </div>
-          <div className="card text-center bg-white">
+          <div className="card text-center bg-white" ref={citationsCount.elementRef}>
             <div className="text-4xl font-bold text-primary mb-2">
-              {cvData.bibliometrics.totalCitations.toLocaleString()}+
+              {Math.round(citationsCount.count).toLocaleString()}+
             </div>
             <div className="text-slate-600">Total Citations</div>
           </div>
-          <div className="card text-center bg-white">
+          <div className="card text-center bg-white" ref={hIndexCount.elementRef}>
             <div className="text-4xl font-bold text-primary mb-2">
-              {cvData.bibliometrics.hIndex}
+              {Math.round(hIndexCount.count)}
             </div>
             <div className="text-slate-600">H-Index</div>
           </div>
-          <div className="card text-center bg-white">
+          <div className="card text-center bg-white" ref={i10IndexCount.elementRef}>
             <div className="text-4xl font-bold text-primary mb-2">
-              {cvData.bibliometrics.i10Index}
+              {Math.round(i10IndexCount.count)}
             </div>
             <div className="text-slate-600">i10-Index</div>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mt-8">
-          <div className="card text-center bg-white">
+          <div className="card text-center bg-white" ref={firstAuthorCount.elementRef}>
             <div className="text-3xl font-bold text-primary mb-2">
-              {cvData.bibliometrics.firstAuthorship}
+              {Math.round(firstAuthorCount.count)}
             </div>
             <div className="text-slate-600">First Authorship</div>
           </div>
-          <div className="card text-center bg-white">
+          <div className="card text-center bg-white" ref={correspondingAuthorCount.elementRef}>
             <div className="text-3xl font-bold text-primary mb-2">
-              {cvData.bibliometrics.correspondingAuthorship}
+              {Math.round(correspondingAuthorCount.count)}
             </div>
             <div className="text-slate-600">Corresponding Authorship</div>
           </div>
-          <div className="card text-center bg-white">
+          <div className="card text-center bg-white" ref={impactFactorCount.elementRef}>
             <div className="text-3xl font-bold text-primary mb-2">
-              {cvData.bibliometrics.highestImpactFactor}
+              {impactFactorCount.count.toFixed(1)}
             </div>
             <div className="text-slate-600">Highest Impact Factor</div>
           </div>

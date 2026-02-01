@@ -1,4 +1,5 @@
 import cvData from '../data/cv_data.json'
+import Typewriter from '../components/Typewriter'
 
 export default function Supervision() {
   return (
@@ -8,7 +9,7 @@ export default function Supervision() {
         <div className="section-container">
           <h1 className="text-center mb-4">Supervision & Teaching</h1>
           <p className="text-center text-xl text-slate-600 max-w-3xl mx-auto">
-            Mentoring the Next Generation of Researchers
+            <Typewriter text="Mentoring the Next Generation of Researchers" speed={40} />
           </p>
         </div>
       </section>

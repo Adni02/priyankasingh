@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Typewriter from '../components/Typewriter'
 
 export default function Contact() {
   const [showEmailModal, setShowEmailModal] = useState(false)
@@ -45,7 +46,7 @@ export default function Contact() {
         <div className="section-container">
           <h1 className="text-center mb-4">Contact</h1>
           <p className="text-center text-xl text-slate-600 max-w-3xl mx-auto">
-            Get in Touch
+            <Typewriter text="Get in Touch" speed={50} />
           </p>
         </div>
       </section>
