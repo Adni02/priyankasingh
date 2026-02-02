@@ -7,10 +7,19 @@ export default function About() {
       {/* Header */}
       <section className="bg-gradient-to-br from-purple-50/40 via-white to-cyan-50/20 py-24">
         <div className="section-container">
-          <h1 className="text-center mb-6">About</h1>
-          <p className="text-center text-lg text-slate-600 max-w-3xl mx-auto">
-            <Typewriter text="Senior Researcher & Group Leader in Nanomedicine and Biomaterials" speed={40} />
-          </p>
+          <div className="max-w-5xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center gap-12 mb-8">
+              <div className="flex-shrink-0">
+                <img src="/priyankasingh/data/priyanka2.jpeg" alt="Dr. Priyanka Singh" className="w-64 h-64 object-cover rounded-2xl shadow-xl" />
+              </div>
+              <div className="flex-1 text-center md:text-left">
+                <h1 className="mb-6">About</h1>
+                <p className="text-lg text-slate-600">
+                  <Typewriter text="Senior Researcher & Group Leader in Nanomedicine and Biomaterials" speed={40} />
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

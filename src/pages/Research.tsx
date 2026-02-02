@@ -28,9 +28,19 @@ export default function Research() {
       <section className="section-container">
         <div className="max-w-4xl mx-auto">
           <h2 className="mb-6">Research Vision & Interests</h2>
-          <p className="text-lg text-slate-700 leading-relaxed max-w-prose">
+          <p className="text-lg text-slate-700 leading-relaxed max-w-prose mb-12">
             {cvData.researchVision}
           </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            <div className="card">
+              <img src="/priyankasingh/data/nanomedicine.jpg.webp" alt="Nanomedicine Research" className="w-full h-64 object-cover rounded-lg mb-4" />
+              <h3 className="text-lg font-semibold text-primary text-center">Nanomedicine Applications</h3>
+            </div>
+            <div className="card">
+              <img src="/priyankasingh/data/drugdelivery.jpg" alt="Drug Delivery Systems" className="w-full h-64 object-cover rounded-lg mb-4" />
+              <h3 className="text-lg font-semibold text-primary text-center">Drug Delivery Systems</h3>
+            </div>
+          </div>
         </div>
       </section>
 
