@@ -55,7 +55,7 @@ function normalizeAuthorName(name: string): string {
   
   // Normalize Priyanka Singh variants to 'P Singh'
   const lowerName = normalized.toLowerCase()
-  if (lowerName === 'p singh' || lowerName === 'priyanka singh' || lowerName === 'im priyanka singh' || lowerName.includes('p singh')) {
+  if (lowerName === 'p singh' || lowerName === 'priyanka singh' || lowerName === 'im priyanka singh' || lowerName === 'singh,p' || lowerName === 'singh, p' || lowerName.includes('p singh')) {
     return 'P Singh'
   }
   
