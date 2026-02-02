@@ -145,12 +145,20 @@ export default function Publications() {
     
     // Apply sorting
     if (sortBy === 'citations-desc') {
-      filtered.sort((a, b) => parseInt(b.citation) - parseInt(a.citation))
+      filtered.sort((a, b) => {
+        const aCit = parseInt(a.citation) || 0
+        const bCit = parseInt(b.citation) || 0
+        if (bCit !== aCit) return bCit - aCit
+        // If citations are equal (including both 0), sort by year desc
+        return parseInt(b.year) - parseInt(a.year)
+      })
     } else {
       filtered.sort((a, b) => {
         const yearDiff = parseInt(b.year) - parseInt(a.year)
         if (yearDiff !== 0) return yearDiff
-        return parseInt(b.citation) - parseInt(a.citation)
+        const aCit = parseInt(a.citation) || 0
+        const bCit = parseInt(b.citation) || 0
+        return bCit - aCit
       })
     }
     
@@ -181,6 +189,14 @@ export default function Publications() {
   const sortedJournals = useMemo(() => Object.entries(facetCounts.journalCounts).sort((a, b) => b[1] - a[1]).slice(0, 20).map(([value, count]) => ({ value, count })), [facetCounts.journalCounts])
   const sortedTopics = useMemo(() => Object.entries(facetCounts.topicCounts).sort((a, b) => b[1] - a[1]).map(([value, count]) => ({ value, count })), [facetCounts.topicCounts])
   const sortedAuthors = useMemo(() => Object.entries(facetCounts.authorCounts).sort((a, b) => b[1] - a[1]).slice(0, 30).map(([value, count]) => ({ value, count })), [facetCounts.authorCounts])
+
+  // Calculate max citation for badge
+  const maxCitation = useMemo(() => {
+    return publications.reduce((max, pub) => {
+      const cit = parseInt(pub.citation) || 0
+      return cit > max ? cit : max
+    }, 0)
+  }, [publications])
 
   const displayedPublications = filteredPublications.slice(0, displayCount)
   const handleLoadMore = () => setDisplayCount(prev => prev + 25)
@@ -299,22 +315,30 @@ export default function Publications() {
         <div className="mt-10"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
           <div className="card text-center bg-white" ref={publicationsCount.elementRef}>
-            <div className="text-4xl font-bold text-primary mb-2">{Math.round(publicationsCount.count)}</div>
+            <div className="text-4xl font-bold text-primary mb-2">
+              {publicationsCount.count === 0 ? cvData.bibliometrics.totalPublications : Math.round(publicationsCount.count)}
+            </div>
             <div className="text-slate-600">Publications</div>
             <p className="text-xs text-slate-500 mt-2">Peer-reviewed articles</p>
           </div>
           <div className="card text-center bg-white" ref={citationsCount.elementRef}>
-            <div className="text-4xl font-bold text-primary mb-2">{Math.round(citationsCount.count).toLocaleString()}+</div>
+            <div className="text-4xl font-bold text-primary mb-2">
+              {citationsCount.count === 0 ? cvData.bibliometrics.totalCitations.toLocaleString() : Math.round(citationsCount.count).toLocaleString()}+
+            </div>
             <div className="text-slate-600">Citations</div>
             <p className="text-xs text-slate-500 mt-2">Research impact</p>
           </div>
           <div className="card text-center bg-white" ref={hIndexCount.elementRef}>
-            <div className="text-4xl font-bold text-primary mb-2">{Math.round(hIndexCount.count)}</div>
+            <div className="text-4xl font-bold text-primary mb-2">
+              {hIndexCount.count === 0 ? cvData.bibliometrics.hIndex : Math.round(hIndexCount.count)}
+            </div>
             <div className="text-slate-600">H-Index</div>
             <p className="text-xs text-slate-500 mt-2">Academic contribution</p>
           </div>
           <div className="card text-center bg-white" ref={impactFactorCount.elementRef}>
-            <div className="text-4xl font-bold text-primary mb-2">{impactFactorCount.count.toFixed(1)}</div>
+            <div className="text-4xl font-bold text-primary mb-2">
+              {impactFactorCount.count === 0 ? cvData.bibliometrics.highestImpactFactor.toFixed(1) : impactFactorCount.count.toFixed(1)}
+            </div>
             <div className="text-slate-600">Highest IF</div>
             <p className="text-xs text-slate-500 mt-2">Top journal</p>
           </div>
@@ -362,40 +386,79 @@ export default function Publications() {
               </div>
 
               <div className="space-y-4">
-                {displayedPublications.map((pub, index) => (
-                  <div key={index} className="card card-hover group transition-all duration-300 hover:border-primary/50">
-                    <div className="flex flex-col gap-3">
-                      <a href={pub.link} target="_blank" rel="noopener noreferrer" className="group-hover:text-primary transition-colors">
-                        <h3 className="text-lg font-semibold text-slate-900 group-hover:text-primary transition-colors">{pub.title}</h3>
-                      </a>
-                      <p className="text-sm text-slate-600 font-medium">{pub.author}</p>
-                      <div className="flex flex-wrap items-center gap-2 text-sm text-slate-700">
-                        <span className="italic font-medium">{pub.journal}</span>
-                        {pub.journal_issue && pub.journal_issue.trim() !== '' && <><span className="text-slate-400">•</span><span>{pub.journal_issue}</span></>}
-                        {pub.year && pub.year.trim() !== '' && <><span className="text-slate-400">•</span><span className="text-primary font-semibold">{pub.year}</span></>}
-                      </div>
-                      {pub.topics.length > 0 && (
-                        <div className="flex flex-wrap gap-2">
-                          {pub.topics.map(topic => (
-                            <button key={topic} onClick={() => { if (!selectedTopics.includes(topic)) toggleFilter('topic', topic) }} className={`text-xs px-2.5 py-1 rounded-full transition-colors ${selectedTopics.includes(topic) ? 'bg-primary text-white' : 'bg-slate-100 text-slate-600 hover:bg-primary/10 hover:text-primary'}`}>{topic}</button>
-                          ))}
-                        </div>
-                      )}
-                      <div className="flex flex-wrap items-center gap-4 pt-2">
-                        {pub.citation && pub.citation.trim() !== '' && parseInt(pub.citation) > 0 && (
-                          <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                            {pub.citation} citations
-                          </span>
-                        )}
-                        <a href={pub.link} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm px-4 py-2">
-                          Read Paper
-                          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                {displayedPublications.map((pub, index) => {
+                  const citCount = parseInt(pub.citation) || 0
+                  const isHighestCitation = citCount > 0 && citCount === maxCitation
+                  const isFirstAuthor = pub.authors.length > 0 && pub.authors[0] === 'P Singh'
+                  const isLastAuthor = pub.authors.length > 0 && pub.authors[pub.authors.length - 1] === 'P Singh'
+                  const isLatest = pub.year === '2026'
+                  
+                  return (
+                    <div key={index} className="card card-hover group transition-all duration-300 hover:border-primary/50">
+                      <div className="flex flex-col gap-3">
+                        <a href={pub.link} target="_blank" rel="noopener noreferrer" className="group-hover:text-primary transition-colors">
+                          <h3 className="text-lg font-semibold text-slate-900 group-hover:text-primary transition-colors">{pub.title}</h3>
                         </a>
+                        
+                        {/* Special badges */}
+                        {(isHighestCitation || isFirstAuthor || isLastAuthor || isLatest) && (
+                          <div className="flex flex-wrap gap-2">
+                            {isHighestCitation && (
+                              <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-gradient-to-r from-amber-400 to-orange-500 text-white rounded-full text-xs font-semibold shadow-sm">
+                                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                                Highest Citation
+                              </span>
+                            )}
+                            {isFirstAuthor && (
+                              <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-full text-xs font-semibold shadow-sm">
+                                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" /></svg>
+                                First Author
+                              </span>
+                            )}
+                            {isLastAuthor && (
+                              <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-xs font-semibold shadow-sm">
+                                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" /></svg>
+                                Last Author
+                              </span>
+                            )}
+                            {isLatest && (
+                              <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full text-xs font-semibold shadow-sm">
+                                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" /></svg>
+                                Latest Publication
+                              </span>
+                            )}
+                          </div>
+                        )}
+                        
+                        <p className="text-sm text-slate-600 font-medium">{pub.author}</p>
+                        <div className="flex flex-wrap items-center gap-2 text-sm text-slate-700">
+                          <span className="italic font-medium">{pub.journal}</span>
+                          {pub.journal_issue && pub.journal_issue.trim() !== '' && <><span className="text-slate-400">•</span><span>{pub.journal_issue}</span></>}
+                          {pub.year && pub.year.trim() !== '' && <><span className="text-slate-400">•</span><span className="text-primary font-semibold">{pub.year}</span></>}
+                        </div>
+                        {pub.topics.length > 0 && (
+                          <div className="flex flex-wrap gap-2">
+                            {pub.topics.map(topic => (
+                              <button key={topic} onClick={() => { if (!selectedTopics.includes(topic)) toggleFilter('topic', topic) }} className={`text-xs px-2.5 py-1 rounded-full transition-colors ${selectedTopics.includes(topic) ? 'bg-primary text-white' : 'bg-slate-100 text-slate-600 hover:bg-primary/10 hover:text-primary'}`}>{topic}</button>
+                            ))}
+                          </div>
+                        )}
+                        <div className="flex flex-wrap items-center gap-4 pt-2">
+                          {pub.citation && pub.citation.trim() !== '' && parseInt(pub.citation) > 0 && (
+                            <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                              {pub.citation} citations
+                            </span>
+                          )}
+                          <a href={pub.link} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm px-4 py-2">
+                            Read Paper
+                            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                          </a>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
 
               {displayedPublications.length < filteredPublications.length && (
